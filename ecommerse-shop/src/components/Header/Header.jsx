@@ -15,6 +15,7 @@ function Header() {
         containerHeader,
         containerBox
     } = styles;
+
     return (
         <div className={container}>
             <div className={containerHeader}>
@@ -22,14 +23,22 @@ function Header() {
                     <div className={containerBoxIcon}>
                         {dataBoxIcon.map((item) => {
                             return (
-                                <BoxIcon type={item.type} href={item.href} />
+                                <BoxIcon
+                                    type={item.type}
+                                    href={item.href}
+                                    key={item.id}
+                                />
                             );
                         })}
                     </div>
                     <div className={containerMenu}>
                         {dataMenu.slice(0, 3).map((item) => {
                             return (
-                                <Menu content={item.content} herf={item.href} />
+                                <Menu
+                                    content={item.content}
+                                    herf={item.href}
+                                    key={item.id}
+                                />
                             );
                         })}
                     </div>
@@ -45,14 +54,22 @@ function Header() {
                     <div className={containerMenu}>
                         {dataMenu.slice(3, dataMenu.length).map((item) => {
                             return (
-                                <Menu content={item.content} herf={item.href} />
+                                <Menu
+                                    content={item.content}
+                                    herf={item.href}
+                                    key={item.id}
+                                />
                             );
                         })}
                     </div>
                     <div className={containerBoxIcon}>
                         {dataBoxIconRight.map((item) => {
                             return (
-                                <BoxIcon type={item.type} href={item.href} />
+                                <BoxIcon
+                                    type={item.type}
+                                    href={item.href}
+                                    key={item.id}
+                                />
                             );
                         })}
                     </div>
