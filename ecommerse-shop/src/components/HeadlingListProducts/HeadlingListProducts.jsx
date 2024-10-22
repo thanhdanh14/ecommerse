@@ -2,18 +2,24 @@ import CountdownTimer from '@components/CountdownTimer/CountdownTimer';
 import MainLayout from '@components/Layout/Layout';
 import styles from './styles.module.scss';
 import CountdownBanner from '@components/CountdownBanner/CountdownBanner';
+import ProductItem from '@components/ProductItem/ProductItem';
 
-function HeadlingListProducts() {
-    const targetDate = '2025-12-31T00:00:00';
+function HeadlingListProducts({ data }) {
     const { container, containerItem } = styles;
+    console.log(data);
     return (
         <MainLayout>
-            {/* <CountdownTimer targetDate={targetDate} /> */}
             <div className={container}>
                 <CountdownBanner />
                 <div className={containerItem}>
-                    <div>1</div>
-                    <div>2</div>
+                    {data.map((item) => (
+                        <ProductItem
+                            src={item.images[0]}
+                            prevSrc={item.images[1]}
+                            name={item.name}
+                            price={item.price}
+                        />
+                    ))}
                 </div>
             </div>
         </MainLayout>

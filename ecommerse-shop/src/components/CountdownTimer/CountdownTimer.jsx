@@ -29,7 +29,7 @@ const CountdownTimer = ({ targetDate }) => {
         }, 1000);
 
         return () => clearTimeout(timer);
-    });
+    }, [targetDate]);
 
     const formatNumber = (number) => {
         return String(number).padStart(2, '0');
