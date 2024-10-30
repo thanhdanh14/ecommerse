@@ -14,14 +14,6 @@ function HookForm() {
         control,
         name: 'inputlove'
     });
-    const submitForm = (data) => {
-        console.log(data);
-    };
-
-    const map = new Map();
-
-    const result = true && 'javascript' && 42 && null && 'end';
-    console.log(result);
 
     // map.set('name', 'John');
     // map.set('age', 23);

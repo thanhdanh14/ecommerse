@@ -1,0 +1,25 @@
+@import '@styles/variables.module.scss';
+
+.container {
+    margin-bottom: 15px;
+
+    .label {
+        font-size: 14px;
+        color: $four_color;
+        margin-bottom: 5px;
+    }
+
+    .input {
+        width: 100%;
+        padding: 5px;
+        outline: none;
+        padding: 10px 0 10px 10px;
+        border: 1px solid #e1e1e1;
+        position: relative;
+    }
+    .boxIcon {
+        position: absolute;
+        right: 15px;
+        top: 215px;
+    }
+}
