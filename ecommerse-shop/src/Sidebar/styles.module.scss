@@ -1,0 +1,41 @@
+.container {
+    position: relative;
+
+    .overplay {
+        position: fixed;
+        left: 0;
+        top: 0;
+        bottom: 0;
+        background-color: #0000004d;
+        z-index: 1000;
+        width: 100%;
+        transition: all 0.5s ease;
+    }
+
+    .loginform {
+        position: fixed;
+        top: 0;
+        right: 0;
+        width: 370px;
+        background-color: white;
+        height: 100vh;
+        z-index: 1001;
+        transform: translateX(370px);
+        transition: all 0.5s ease;
+    }
+    .slideSideBar {
+        transform: translateX(0);
+    }
+    .boxIcon {
+        position: absolute;
+        left: -50px;
+        top: 15px;
+        background-color: white;
+        border-radius: 50%;
+        padding: 10px 10px;
+        cursor: pointer;
+        &:hover {
+            background-color: grey;
+        }
+    }
+}

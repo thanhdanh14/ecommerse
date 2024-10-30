@@ -1,0 +1,25 @@
+@import '@styles/variables.module.scss';
+.container {
+    padding: 10px 10px;
+}
+.title {
+    font-size: 20px;
+    text-align: center;
+    cursor: pointer;
+}
+.title::after {
+    content: '';
+    height: 3px;
+    width: 100%;
+    display: inline-block;
+    background-color: $primary_color;
+    transform-origin: right;
+    transform: scale(0);
+    opacity: 0;
+    transition: all 300ms;
+}
+
+.title:hover::after {
+    opacity: 1;
+    transform: scale(1);
+}

@@ -4,13 +4,29 @@
 .btn {
     @include btn(176px, 42px, 5px, $primary_color);
     cursor: pointer;
-    color: $white_color;
     font-size: 14px;
     font-weight: 300px;
+    &:hover {
+        transition: all 300ms;
+    }
+}
+
+.primaryBtn {
+    background-color: $primary_color;
+    color: $white_color;
     &:hover {
         background-color: transparent;
         color: $primary_color;
         border: 1px solid $primary_color;
-        transition: all 300ms;
+    }
+}
+
+.secondaryBtn {
+    background-color: $white_color;
+    color: $primary_color;
+    border: 1px solid $primary_color;
+    &:hover {
+        background-color: $primary_color;
+        color: $white_color;
     }
 }

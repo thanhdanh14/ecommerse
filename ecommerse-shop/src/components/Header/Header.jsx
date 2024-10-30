@@ -7,17 +7,37 @@ import {
 import styles from './styles.module.scss';
 import Menu from '@components/Header/Menu/Menu';
 import Logo from '@icons/images/Logo-retina.png';
+import useScrollHandleLing from '@components/hooks/useScrollHandling';
+import { useContext, useEffect, useState } from 'react';
+import classNames from 'classnames';
+import { ContextSideBar } from '@components/contexts/SideBarContext';
 function Header() {
     const {
         container,
         containerBoxIcon,
         containerMenu,
         containerHeader,
-        containerBox
+        containerBox,
+        fixedHeader,
+        topHeader
     } = styles;
 
+    const { scrollPosition } = useScrollHandleLing();
+    const [stickPosition, setSickPosition] = useState(false);
+    useEffect(() => {
+        if (scrollPosition > 80) {
+            setSickPosition(true);
+        } else {
+            setSickPosition(false);
+        }
+    }, [scrollPosition]);
+
     return (
-        <div className={container}>
+        <div
+            className={classNames(container, topHeader, {
+                [fixedHeader]: stickPosition
+            })}
+        >
             <div className={containerHeader}>
                 <div className={containerBox}>
                     <div className={containerBoxIcon}>
